@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import eCom.domain.order.BoughtItem;
 import eCom.domain.order.Order;
-import eCom.repository.CataglogCsvRepository;
 import eCom.repository.CataglogRepository;
 
 /*
@@ -15,8 +14,7 @@ public class ShoppingCart {
 	private List<BoughtItem> boughtItems = new ArrayList<>();
 	private Catalog catalog;
 	
-	public ShoppingCart() throws Exception{
-		CataglogRepository cr = new CataglogCsvRepository();
+	public ShoppingCart(CataglogRepository cr) throws Exception{
 		catalog = cr.load();
 	}
 	

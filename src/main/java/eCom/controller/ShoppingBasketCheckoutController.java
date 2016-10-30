@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import eCom.domain.order.BoughtItem;
+import eCom.repository.CataglogCsvRepository;
+import eCom.repository.CataglogRepository;
 import eCom.domain.cart.ShoppingCart;
 
 @RestController
@@ -23,8 +25,8 @@ public class ShoppingBasketCheckoutController {
 			consumes={MediaType.APPLICATION_JSON_VALUE},
 			produces={MediaType.APPLICATION_JSON_VALUE})
 	public Response checkout(@RequestBody List<BoughtItem> boughtItems) throws Exception{
-		
-		ShoppingCart cart = new ShoppingCart();
+		CataglogRepository cr = new CataglogCsvRepository();
+		ShoppingCart cart = new ShoppingCart(cr);
 		cart.AddToCart(boughtItems);
 		return Response.ok(cart.getOrder().getRecieptItems()).build();
 	}
