@@ -15,6 +15,10 @@ A small shopping cart application built using Spring boot and bower.
 * Run Main class
 * Naviagte to http://localhost:8080/
 
+## Compiled Jar
+* /ShoppingCart/CompiledJar/shoppingCartDemo-1.0.0.jar
+
+
 ## Shopping Cart in action
 This is what a working demo should look like
 
