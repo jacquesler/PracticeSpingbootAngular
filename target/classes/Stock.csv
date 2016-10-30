@@ -1,6 +1,0 @@
-Id,Type,Name,Price,Currency,OnSpecial,HasStock
-1,Fruit,Bananas,0.5,USD,False,True
-2,Fruit,Oranges,1.0,GBP,False,True
-3,Fruit,Apples,1.5,USD,False,True
-4,Fruit,Lemons,0.8,GBP,False,True
-5,Fruit,Peaches,1.2,USD,False,True

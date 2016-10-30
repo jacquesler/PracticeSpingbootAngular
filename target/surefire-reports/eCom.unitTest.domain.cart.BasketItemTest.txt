@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: eCom.unitTest.domain.cart.BasketItemTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in eCom.unitTest.domain.cart.BasketItemTest
