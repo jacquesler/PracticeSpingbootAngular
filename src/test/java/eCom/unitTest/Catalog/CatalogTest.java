@@ -1,5 +1,6 @@
 package eCom.unitTest.Catalog;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
@@ -26,7 +27,7 @@ public class CatalogTest {
 		List<BasketItem> result = catalog.getBasketItems();
 		
 		// Assert
-		List<BasketItem> basketItems = catalog.getBasketItems();
+		List<BasketItem> basketItems = new ArrayList<>();
 		StockItemFactory stockItemFactory = StockItemFactory.Instance;
 		PriceFactory priceFactory = PriceFactory.Instance;
 		ExchangeRate gbpUSD = new ExchangeRate(Currency.GBP, Currency.USD, 1.2);

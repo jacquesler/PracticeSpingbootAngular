@@ -6,7 +6,7 @@ import eCom.finance.Money;
  * Represents individual line in order
  */
 
-public final class ReceiptItem {
+public final class ReceiptItem implements Comparable<ReceiptItem>{
 
 	private final String name;
 	private final Money price;
@@ -71,6 +71,11 @@ public final class ReceiptItem {
 		if (quantity != other.quantity)
 			return false;
 		return true;
+	}
+
+	@Override
+	public int compareTo(ReceiptItem o) {
+		return name.compareTo(o.name);
 	}
 	
 	

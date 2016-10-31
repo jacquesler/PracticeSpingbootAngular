@@ -6,7 +6,7 @@ import eCom.finance.Money;
 /*
  * Represents the individual items which can be bought by the user
  */
-public final class BasketItem {
+public final class BasketItem implements Comparable<BasketItem>{
 
 	private StockItem stockItem;
 	private ExchangeRate exchangeRate;
@@ -47,7 +47,6 @@ public final class BasketItem {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((stockItem == null) ? 0 : stockItem.hashCode());
-		result = prime * result + quantity;
 		return result;
 	}
 
@@ -65,10 +64,15 @@ public final class BasketItem {
 				return false;
 		} else if (!stockItem.equals(other.stockItem))
 			return false;
-		if (quantity != other.quantity)
-			return false;
 		return true;
 	}
+
+	@Override
+	public int compareTo(BasketItem o) {
+		return stockItem.compareTo(o.stockItem);
+	}
+
+	
 	
 	
 }

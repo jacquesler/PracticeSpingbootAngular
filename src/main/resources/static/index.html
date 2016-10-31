@@ -23,7 +23,6 @@
 	   			<tr ng-repeat="basketItem in basketItems">
 	      			<td>{{ basketItem.stockItem.name }}</td>
 	      			<td>{{ basketItem.price.amount | currency : basketItem.currencySymbol }}</td>
-	      			<td><input type="checkbox" ng-model="basketItem.stockItem.onSpecial" disabled="disabled"/></td>
 	      			<td>{{ basketItem.quantity }}
 	      			<td><input type="button" class="btn" name="plusButton" ng-click="plusOne($index)" value="+"/>
 	      				<input type="button" class="btn" name="minusButton" ng-click="minusOne($index)" value="-"/>
@@ -43,7 +42,6 @@
 	   			<tr ng-repeat="receiptItem in receiptItems">
 	      			<td>{{ receiptItem.name }}</td>
 	      			<td>{{ receiptItem.quantity > 0 ? receiptItem.quantity : ""}}</td>	
-	      			<td>{{ receiptItem.specialType}}</td>
 	      			<td>{{ receiptItem.total | currency: receiptItem.symbol }}</td>	      			
 	   			</tr>
 			</table>

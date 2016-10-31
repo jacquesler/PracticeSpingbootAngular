@@ -1,6 +1,6 @@
 package eCom.repository;
 
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
@@ -14,8 +14,8 @@ public class CataglogCsvRepository implements CataglogRepository {
 
 	@Override
 	public Catalog load() throws Exception {
-		List<ExchangeRate> exchangeRates = new CsvExchangeRateRepository().loadAll();
-		List<StockItem> stockItems = new CsvStockRepository().loadAll();
+		Set<ExchangeRate> exchangeRates = new CsvExchangeRateRepository().loadAll();
+		Set<StockItem> stockItems = new CsvStockRepository().loadAll();
 		return new Catalog(Currency.GBP, stockItems, exchangeRates);
 	}
 

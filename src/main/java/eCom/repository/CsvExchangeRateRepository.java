@@ -1,6 +1,6 @@
 package eCom.repository;
 
-import java.util.List;
+import java.util.Set;
 
 import eCom.factory.ExchangeRateFactory;
 import eCom.finance.Currency;
@@ -22,7 +22,7 @@ public class CsvExchangeRateRepository implements ExchangeRateRepository{
 	}
 
 	@Override
-	public List<ExchangeRate> loadAll() throws Exception {
+	public Set<ExchangeRate> loadAll() throws Exception {
 		CsvCommandReader<ExchangeRate> csvCommandReader = new CsvCommandReader<>("ExchangeRate.csv", ExchangeRateFactory.Instance);
 		return csvCommandReader.loadAll().getDomainList();
 	}

@@ -9,10 +9,10 @@ import eCom.repository.CataglogRepository;
 /*
  * Allows the user to add items to the shopping cart
  */
-public class ShoppingCart {
+public final class ShoppingCart {
 	
 	private List<BoughtItem> boughtItems = new ArrayList<>();
-	private Catalog catalog;
+	private final Catalog catalog;
 	
 	public ShoppingCart(CataglogRepository cr) throws Exception{
 		catalog = cr.load();

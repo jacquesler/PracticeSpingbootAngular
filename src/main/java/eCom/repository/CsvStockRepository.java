@@ -1,6 +1,6 @@
 package eCom.repository;
 
-import java.util.List;
+import java.util.Set;
 
 import eCom.domain.inventory.StockItem;
 import eCom.factory.StockItemFactory;
@@ -15,7 +15,7 @@ public class CsvStockRepository implements StockRepository {
 	}
 
 	@Override
-	public List<StockItem> loadAll() throws Exception {
+	public Set<StockItem> loadAll() throws Exception {
 		CsvCommandReader<StockItem> csvCommandReader = new CsvCommandReader<StockItem>("Stock.csv", StockItemFactory.Instance);
 		return csvCommandReader.loadAll().getDomainList();
 	}

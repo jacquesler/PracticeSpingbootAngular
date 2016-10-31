@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.opencsv.CSVReader;
 
@@ -14,13 +16,13 @@ import eCom.factory.DomainCsvFactory;
 
 public class CsvCommandReader<T> {
 
-	private List<T> list;
+	private Set<T> list;
 	private DomainCsvFactory<T> domainCsvFactory;
 	private String file;
 	
 	CsvCommandReader(String file, DomainCsvFactory<T> domainCsvFactory){
 		this.file = file;
-		this.list = new ArrayList<T>();
+		this.list = new HashSet<T>(16);
 		this.domainCsvFactory = domainCsvFactory;
 	}
 	
@@ -43,7 +45,7 @@ public class CsvCommandReader<T> {
 		return this;
 	}
 	
-	public List<T> getDomainList(){
+	public Set<T> getDomainList(){
 		return list;
 	}
 	

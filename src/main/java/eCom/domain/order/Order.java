@@ -1,5 +1,6 @@
 package eCom.domain.order;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,11 +13,11 @@ import eCom.finance.Money;
  * Represents items that have been bought and builds up the receipt lines
  */
 
-public class Order {
+public final class Order {
 
-	private List<ReceiptItem> recieptItems;	
-	private ReceiptLineFactory receiptLineFactory = ReceiptLineFactory.Instance;
-	private Currency baseCurrency;
+	private final List<ReceiptItem> recieptItems;	
+	private final ReceiptLineFactory receiptLineFactory = ReceiptLineFactory.Instance;
+	private final Currency baseCurrency;
 	
 	public Order(Currency baseCurrency, List<BoughtItem> boughtItems, List<BasketItem> basketItems) throws Exception{
 		this.baseCurrency = baseCurrency;
@@ -25,7 +26,8 @@ public class Order {
 	
 	public List<ReceiptItem> getRecieptItems() throws Exception{
 		addTotalLine();
-		return recieptItems;
+		Collections.sort(recieptItems);
+		return Collections.unmodifiableList(recieptItems);
 	}
 	
 	private List<ReceiptItem> getReceiptLines(List<BoughtItem> boughtItems, List<BasketItem> basketItems){
