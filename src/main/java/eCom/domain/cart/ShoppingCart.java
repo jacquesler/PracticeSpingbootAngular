@@ -28,11 +28,11 @@ public final class ShoppingCart {
 	}
 	
 	private void ValidateCart(List<BoughtItem> items){
-		ValidItemsBougt(items);
+		ValidItemsBought(items);
 		ValidQuantityBought(items);
 	}
 	
-	private void ValidItemsBougt(List<BoughtItem> items){
+	private void ValidItemsBought(List<BoughtItem> items){
 		List<String> boughtItems = items.stream().map(e -> e.getId()).collect(Collectors.toList());
 		List<String> availableItems = catalog.getBasketItems().stream().map(e -> e.getStockItem().getId()).collect(Collectors.toList());
 		
