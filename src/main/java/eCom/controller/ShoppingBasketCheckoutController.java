@@ -26,7 +26,7 @@ public class ShoppingBasketCheckoutController {
 			produces={MediaType.APPLICATION_JSON_VALUE})
 	public Response checkout(@RequestBody List<BoughtItem> boughtItems) throws Exception{
 		CataglogRepository cr = new CataglogCsvRepository();
-		ShoppingCart cart = new ShoppingCart(cr);
+		ShoppingCart cart = new ShoppingCart(cr.load());
 		cart.AddToCart(boughtItems);
 		return Response.ok(cart.getOrder().getRecieptItems()).build();
 	}
