@@ -1,6 +1,6 @@
 # ShoppingCart
 
-A small shopping cart application built using Spring boot and bower.
+A small shopping cart application built using Spring boot and AngularJS.
 
 ## Installation and Running instructions in command promt
 * Clone repository
